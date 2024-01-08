@@ -1,0 +1,42 @@
+.container {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  padding: 1rem;
+  gap: 5rem;
+  color: #fff;
+  flex-wrap: nowrap;
+  border-bottom: 1.5px solid #0d0d0e;
+  overflow: visible;
+}
+
+.coin_symbol {
+  text-transform: lowercase;
+}
+
+.container span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  width: 8rem;
+  text-align: center;
+}
+
+.container .mkt_cap {
+  font-size: 0.6rem;
+  scale: 1.6;
+}
+
+.container .coin_image {
+  height: 2rem;
+  width: 2rem;
+  margin-right: var(--margin-negative-l);
+}
+.coin_image img {
+  height: 2rem;
+  width: 2rem;
+}

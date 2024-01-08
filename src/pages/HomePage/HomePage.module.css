@@ -1,0 +1,28 @@
+.home {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.refresh_data {
+ position: absolute;
+ border: none;
+ outline: none;
+ top: 15rem;
+ right: 5rem;
+ align-self: flex-end;
+ padding: 0.4rem 0.8rem;
+ outline: none;
+ border: none;
+ border-radius: 0.3rem;
+ box-shadow: 0 0.25rem 0.25rem #000000;
+ background: #a7bdc8;
+ transition: scale 0.4s ease-in-out;
+}
+
+.refresh_data:hover {
+  scale: 1.2;
+}
