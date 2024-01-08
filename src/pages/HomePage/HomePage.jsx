@@ -37,8 +37,7 @@ const HomePage = () => {
 
   async function getCoinData() {
     const response = await axios.request(options);
-    setCoinData(response.data.data.coins) 
-    console.log(coinData)
+    setCoinData(response.data.data.coins)
   }
   useEffect(() => {
     getCoinData();
@@ -63,10 +62,10 @@ const HomePage = () => {
         });
         getCoinData()}}><img src={RefreshIcon}/></button>
       <Header inputHandler={inputHandler} />
-      {coinData.length > 0 ? (
+      {coinData.length > 0 ? 
+   
         coinData.map((coin, index) => {
-          
-          
+          if(coin.name.toLowerCase().includes(inputText)){
           return (
             <Card
               key={index}
@@ -78,9 +77,20 @@ const HomePage = () => {
               price={coin.price}
               listedAt={coin.listedAt}
             />
-          ) 
-        })
-      ) : (
+          ) } else {
+            <Card
+            key={index}
+            symbol={coin.symbol}
+            name={coin.name}
+            coinUrl={coin.iconUrl}
+            marketCap={coin.marketCap}
+            change={coin.change}
+            price={coin.price}
+            listedAt={coin.listedAt}
+          />
+          }
+        }) 
+       : (
         <div>Loading...</div>
       )}
     </div>
