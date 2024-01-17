@@ -4,6 +4,7 @@ import Header from "../../components/Header/Header";
 import Card from "../../components/Cards/Card";
 import styles from "./HomePage.module.css";
 import RefreshIcon from "/assets/icons/refresh.svg";
+import {coinDetail} from "../../apis/coinDetail";
 
 import axios from "axios";
 const HomePage = () => {
@@ -12,34 +13,17 @@ const HomePage = () => {
   let inputHandler = (e) => {
     var lowerCase = e.target.value.toLowerCase();
     setInputText(lowerCase);
-    console.log(lowerCase);
   };
 
-  const options = {
-    method: "GET",
-    url: "https://coinranking1.p.rapidapi.com/coins",
-    params: {
-      referenceCurrencyUuid: "yhjMzLPhuIDl",
-      timePeriod: "24h",
-      "tiers[0]": "1",
-      orderBy: "marketCap",
-      orderDirection: "desc",
-      limit: "50",
-      offset: "0",
-    },
-    headers: {
-      "X-RapidAPI-Key": "f5a9e2b8fbmsh7a7384ba40996f2p1f8fd9jsnab5d3917ab79",
-      "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
-    },
-  };
-
-  async function getCoinData() {
-    const response = await axios.request(options);
-    setCoinData(response.data.data.coins);
-  }
   useEffect(() => {
     getCoinData();
   }, []);
+ 
+ const getCoinData = async () => {
+    const result = await coinDetail();
+    setCoinData(result);
+  }
+ 
 
   return (
     <div className={styles.home}>
