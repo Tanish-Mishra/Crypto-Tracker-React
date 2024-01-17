@@ -27,8 +27,8 @@ Visit [Crypto Tracker App](https://cryptocurrencytracker-react.vercel.app/) to s
 4. Stay informed and make informed decisions in the dynamic world of cryptocurrencies.
 
 ## Screenshots
-![App Screenshot](/assets/screenshots/app.png)
-![App Screenshot](/assets/screenshots/search_feature.png)
+![App Screenshot](/public/assets/screenshots/app.png)
+![App Screenshot](/public/assets/screenshots/search_feature.png)
 
 ## Technologies Used
 - **HTML**: Structure the web page effectively.
